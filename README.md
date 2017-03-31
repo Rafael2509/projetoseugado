@@ -69,7 +69,7 @@ $ composer require robmorgan/phinx
 $ vendor/bin/phinx init 
 Isso vai criar um arquivo de configuração no seu projeto
 
-# crie sua primeira migração
+# Crie sua primeira migração
 
 $ vendor/bin/phinx create MinhaMigration
 
@@ -89,7 +89,7 @@ ou crie o arquivo manualmente.
 
 $ php vendor/bin/phinx migrate -e development
 
-Adionando Faker
+#Adionando Faker
 
 $ composer require fzaninotto/faker
 

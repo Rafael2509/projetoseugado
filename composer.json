@@ -1,0 +1,8 @@
+{
+    "require": {
+        "twig/twig": "~1.0",
+        "robmorgan/phinx": "^0.8.0",
+        "fzaninotto/faker": "^1.6"
+        
+    }
+}
