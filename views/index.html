@@ -2,6 +2,89 @@
 
 {% block content %}
 
-    {{ content }} 
+<div class="col-lg-12" id="content-form">
+	<form id="user" action="global.php" method="POST">
+		<div class="col-lg-6">
+			<div class="col-lg-12">
+				<label class="fullwidth">CPF</label>
+				<input class="fullwidth" type="text" name="CPF"/>
+			</div>
+
+			<div class="col-lg-12">
+				<label class="fullwidth">Name</label>
+				<input class="fullwidth" type="text"  name="name" />
+			</div>
+
+			<div class="col-lg-12">
+				<label class="fullwidth">Lastname</label>
+				<input class="fullwidth" type="text" name="lastname" />
+			</div>
+
+			<div class="col-lg-12">
+				<label class="fullwidth">E-mail</label>
+				<input class="fullwidth" type="text" name="email" />
+			</div>
+
+			<div class="col-lg-12">
+				<label class="fullwidth">Birthday</label>
+				<input class="fullwidth" type="text" name="birthday" />
+			</div>
+
+			<div class="col-lg-12">
+				<label class="fullwidth">Password</label>
+				<input class="fullwidth" type="password" name="password" />
+			</div>
+			<div class="col-lg-12">
+				<label class="fullwidth">Type user</label>
+				<input type="radio" name="type_user" value="A" /><label> Administrator</label>
+				<input type="radio" name="type_user" value="C" /><label>Common</label>
+			</div>
+
+			<div class="col-lg-6">
+				<label>Active</label>
+				<input type="checkbox" name="active" value="1" />
+			</div>
+		</div>
+		<div class="col-lg-6">
+				<div class="col-lg-12">
+			<label class="fullwidth">Company</label>
+			<input class="fullwidth" type="text" name="company"/>
+		</div>
+		<div class="col-lg-12">
+			<label class="fullwidth">Telphone</label>
+			<input class="fullwidth" type="text"  name="telphone" />
+		</div>
+		<div class="col-lg-12">
+			<label class="fullwidth">Responsibility</label>
+			<input class="fullwidth" type="text"  name="responsibility" />
+		</div>
+
+		<div class="col-lg-12">
+			<label class="fullwidth">Description</label>
+			<input class="fullwidth" type="text" name="description" />
+		</div>
+
+		<div class="col-lg-6">
+			<label class="fullwidth">Start Date</label>
+			<input class="fullwidth" type="text" name="start_date" />
+		</div>
+
+		<div class="col-lg-6">
+			<label class="fullwidth">Finish Date</label>
+			<input class="fullwidth" type="text" name="finish_date" />
+		</div>
+
+		<div class="col-lg-12">
+			<label>Are you still working here?</label>
+			<input type="checkbox" name="current" value='1'/>
+		</div>
+		<div class="col-lg-6">
+			<label>Active</label>
+			<input type="checkbox" name="active_occupation" value='1' />
+		</div>
+			<button type="submit"> Send</button>
+		</div>
+	</form>
+</div>
     
 {% endblock %}

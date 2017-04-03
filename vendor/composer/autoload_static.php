@@ -29,6 +29,12 @@ class ComposerStaticInit144dc9487cb43a10225645da1d38a258
         array (
             'Faker\\' => 6,
         ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+            'Doctrine\\Common\\' => 16,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -68,6 +74,18 @@ class ComposerStaticInit144dc9487cb43a10225645da1d38a258
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -78,6 +96,33 @@ class ComposerStaticInit144dc9487cb43a10225645da1d38a258
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
+        'D' => 
+        array (
+            'Doctrine\\ORM\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/orm/lib',
+            ),
+            'Doctrine\\DBAL\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
+            ),
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
+            'Doctrine\\Common\\Inflector\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+        ),
+    );
+
+    public static $fallbackDirsPsr0 = array (
+        0 => '/src',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -86,6 +131,7 @@ class ComposerStaticInit144dc9487cb43a10225645da1d38a258
             $loader->prefixLengthsPsr4 = ComposerStaticInit144dc9487cb43a10225645da1d38a258::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit144dc9487cb43a10225645da1d38a258::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit144dc9487cb43a10225645da1d38a258::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit144dc9487cb43a10225645da1d38a258::$fallbackDirsPsr0;
 
         }, null, ClassLoader::class);
     }

@@ -105,3 +105,7 @@ $faker = Faker\Factory::create();
 
 // generate data by accessing properties
 echo $faker->name;
+
+#Install Doctrine
+
+add "webdevbr/doctrine": "1.0.0" in composer.json and run composer install

@@ -2,7 +2,12 @@
     "require": {
         "twig/twig": "~1.0",
         "robmorgan/phinx": "^0.8.0",
-        "fzaninotto/faker": "^1.6"
-        
+        "fzaninotto/faker": "^1.6",
+        "doctrine/orm": "2.4.*",
+        "symfony/yaml": "2.*",
+        "twbs/bootstrap": "^3.3"
+    },
+    "autoload": {
+        "psr-0": {"": "/src/"}
     }
 }
