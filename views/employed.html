@@ -42,14 +42,14 @@
                     <tr>
                         <td>{{ employee.id }}</td>
                         <td>{{ employee.name }}
-                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-name"/>
+                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-name-{{ employee.id }}"/>
                         </td>
                         <td>{{ employee.lastname }}
-                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-lastname" />
+                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-lastname-{{ employee.id }}" />
                         </td>
                         <td>{{ employee.cpf }}</td>
                         <td>{{ employee.email }}
-                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-email" />
+                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-email-{{ employee.id }}" />
                         </td>  
                         <td>
                             <button type="submit" class="button-dell" name="button" value="dell-{{ employee.id }}"></button>

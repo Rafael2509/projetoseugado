@@ -14,14 +14,14 @@ require_once 'src/Employed.php';
 			break;
 		case 'edit':
 			$edit_employe = $entityManager->find('Employed', $id_employed);
-			if($_POST['new-employee-name'] !== ''){
-				$edit_employe->SetName($_POST['new-employee-name']);
+			if($_POST['new-employee-name-'.$id_employed] !== ''){
+				$edit_employe->SetName($_POST['new-employee-name-'.$id_employed]);
 			}
-			if($_POST['new-employee-lastname'] !== ''){
-				$edit_employe->setLastname($_POST['new-employee-lastname']);
+			if($_POST['new-employee-lastname-'.$id_employed] !== ''){
+				$edit_employe->setLastname($_POST['new-employee-lastname-'.$id_employed]);
 			}
-			if($_POST['new-employee-email'] !== ''){
-				$edit_employe->setEmail($_POST['new-employee-email']);
+			if($_POST['new-employee-email-'.$id_employed] !== ''){
+				$edit_employe->setEmail($_POST['new-employee-email-'.$id_employed]);
 			}
 			$entityManager->persist($edit_employe);
 			$entityManager->flush();
