@@ -203,6 +203,7 @@ body{
 	width: 30px;
 	height: 40px;
 	position: relative;
+	cursor:pointer;
 }
 .button-edit:before{
 	content:"\f14b";
