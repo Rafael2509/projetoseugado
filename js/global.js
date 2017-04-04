@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$("input[type=text][name=birthday]").mask('99/99/9999');
 	$("input[type=text][name=start_date]").mask('99/99/9999');
 	$("input[type=text][name=finish_date]").mask('99/99/9999');
-	$("input[type=text][name=telphone]").mask('99/99/9999');
+	$("input[type=text][name=telphone]").mask('(99)9999-9999');
 	$("input[type=text][name=search-by-cpf]").mask('999.999.999-99');
 	$cont = 0;
 	$verify = 0;
