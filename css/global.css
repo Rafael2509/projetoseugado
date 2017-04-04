@@ -32,15 +32,31 @@ body{
 	line-height: 80px;
 	width: 250px;
 	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	transition: all 2s;
+}
+#menu > li a:before{
+	content: "\f0a4 ";
+	font-family: 'FontAwesome';
+	position: absolute;
+	top:0;
+	right: -100%;
+	font-size: 15pt;
+	color:#FFF;
+	transform: rotateY(180deg);
+}
+#menu > li a:hover:before{
+	right:0px;
 }
 #menu > li > a{
 	color: #FFF;
-	padding: 10px;
 	font-size: 20px;
 	font-family: 'Raleway', sans-serif;
+	display: block;
+	text-align: center;
 }
 #menu > li:hover > a{
-	border-bottom: 2px dashed #FFF;
 	text-decoration: none;
 }
 /*end block header*/
@@ -48,7 +64,6 @@ body{
 /*Block content*/
 .locked{
 	position: relative;
-	transition: all 3.5s;
 }
 .locked:before{
 	content: '';
@@ -125,7 +140,7 @@ body{
 }
 /*End block content*/
 
-/*Block users*/
+/*Block Employed*/
 #content-employed{
 	padding: 30px 50px;
 }
@@ -136,9 +151,95 @@ body{
 	height: 50px;
 	font-size: 22px;
 }
-
-
-/* Block users*/
+#content-employed td:last-child{
+	text-align: center;
+}
+.div-search{
+	margin-bottom: 40px;
+	padding: 0 !important;
+}
+.div-search div{
+	padding: 0 10px 0px 0 !important;
+}
+#search input {
+	color:#000;
+	border:none;
+	border-radius: 0;
+	height: 40px;
+	padding: 5px;
+}
+#search label{
+	color: #FFF;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+}
+#search .button-submit{
+	top: 31px;
+}
+#search .button-submit button{
+	position: relative;
+}
+.button-dell{
+	background: transparent;
+	border:none;
+	width: 30px;
+	height: 40px;
+	position: relative;
+}
+.button-dell:before{
+	content:"\f00d ";
+	font-family: 'FontAwesome';
+	font-size: 18pt;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.button-edit{
+	background: transparent;
+	border:none;
+	width: 30px;
+	height: 40px;
+	position: relative;
+}
+.button-edit:before{
+	content:"\f14b";
+	font-family: 'FontAwesome';
+	font-size: 18pt;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color:#FFF;
+}
+.button-save{
+	background: transparent;
+	border:none;
+	width: 30px;
+	height: 40px;
+	position: relative;
+	right: -28px;
+}
+.button-save:before{
+	content:"\f0c7 ";
+	font-family: 'FontAwesome';
+	font-size: 18pt;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color:#FFF;
+}
+.input-short{
+	width: 190px;
+	height: 30px;
+	color:#000;
+}
+/* Block Employed*/
 
 /*Block message*/
 .message{
@@ -153,15 +254,15 @@ body{
 	line-height: 250px;
 	text-align: center;
 }
-.message .buttons {
-	position: absolute;
+.message .buttons-message {
+	position: relative;
 	display: block;
 	bottom: 0;
 	text-align: center;
 	float: none;
 	width: 100%;
 }
-.message .buttons a{
+.message .buttons-message a{
 	color: #FFF;
 	font-size: 23px;
 	font-weight: 400;

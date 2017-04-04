@@ -1,111 +1,113 @@
-# Primeiro abra o terminal e execute 
-$ sudo apt-get update
+# First open the terminal and run
+$ Sudo apt-get update
 
-# Depois instale o apache 
-$ sudo apt-get install apache2 
+# Then install apache
+$ Sudo apt-get install apache2
 
-# Instalando mysql
-$ sudo apt-get install mysql-server
+# Installing mysql
+$ Sudo apt-get install mysql-server
 
-	-- configure sua senha de root do banco de dados nesse processo
+- configure your database root password in this process
 
-	execute o seguinte comando, apenas para aumentar um pouco a segurança do seu banco de dados
+Run the following command, only to slightly increase the security of your database
 
-	$ sudo mysql_secure_installation
+Sudo mysql_secure_installation
 
-# Instalando o PHP
-sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mcrypt
+# Installing PHP
+Sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mcrypt
 
-Altere o servidor para que ele de prioridades a arquivos .php acessando
-	$ sudo nano /etc/apache2/mods-enabled/dir.conf
+Change the server so it prioritizes .php files by accessing
+$ Sudo nano /etc/apache2/mods-enabled/dir.conf
 
-	Retire o index.php de onde ele se encontra atualmente, e o coloque na primeira opção.
+Exit index.php from where it is currently, and put it in the first option.
 
-	CTRL X para sair, apertando Y para confirmar a alteração e enter para confirmar local do arquivo
+CTRL X to exit, pressing Y to confirm the change and enter to confirm file location
 
-# Proximo passo - Criando um virtual Host 
-	Crie uma pasta em um local de sua preferencia e dê a seguinte permissão
+# Next step - Creating a virtual host
+Create a folder in a location of your choice and give the following permission
 
-	$ sudo chmod -R 775 /seucaminho/seuprojeto
+$ Sudo chmod -R 775 / seucaminho / seuprojeto
 
-	ou se preferir de permissão total para esta pasta.
+Or if you prefer full permission for this folder.
 
-	Crie um arquivo na sua pasta e coloque algum conteudo dentro dele
+Create a file in your folder and put some content inside it
 
-	Copie o arquivo original do apache e faça as configurações do seu host
+Copy the original apache file and make the settings of your host
 
-	$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/seuprojeto.conf
+$ Sudo cp /etc/apache2/sites-available/000-default.conf/etc/apache2/sites-available/seuproject.conf
 
-	descomente a linha do ServerName e altere para o caminho que deseja acessar, e caso queria adicione a linha 
-	ServerAlias
+Uncomment the ServerName line and change to the path you want to access, and if you wanted to add the line
+ServerAlias
 
-	ative as configurações
+Enable settings
 
-	$ sudo a2ensite seuprojeto.conf
+$ Sudo a2ensite seuprojeto.conf
 
-	$ sudo service apache2 restart
+$ Sudo service apache2 restart
 
-	adicione a seguinte linha no arquivo /etc/hosts
+Add the following line in the / etc / hosts file
 
-	127.0.0.1 seuprojeto.com
+127.0.0.1 seuprojeto.com
 
-# Instalando composer
+# Installing composer
 
-	$ sudo apt-get update
+$ Sudo apt-get update
 
-	$ sudo apt-get install curl php7.0-cli git 	
+$ Sudo apt-get install curl php7.0-cli git
 
-	$ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-	
-# TWIG
-$ composer require twig/twig:~1.0
+$ Curl -sS https://getcomposer.org/installer | Sudo php - --install-dir = / usr / local / bin --filename = composer
+
+TWIG
+$ Composer require twig / twig: ~ 1.0
 
 
-Instale o Phinx
-sudo apt-get install php7.0-gd php7.0-mysql
+Install Phinx
+Sudo apt-get install php7.0-gd php7.0-mysql
 
-$ composer require robmorgan/phinx
+$ Composer require robmorgan / phinx
 
-$ vendor/bin/phinx init 
-Isso vai criar um arquivo de configuração no seu projeto
+$ Vendor / bin / phinx init
+This will create a configuration file in your project
 
-# Crie sua primeira migração
+# Create your first migration
 
-$ vendor/bin/phinx create MinhaMigration
+$ Vendor / bin / phinx create MinhaMigration
 
-ou crie o arquivo manualmente.
-	<?php
-	use Phinx\Migration\AbstractMigration;
-	class PrimeiraMigration extends AbstractMigration
-	{
-	    public function change()
-	    {
-	        $table = $this->table('Usuarios');
-	        $table->addColumn('nome', 'string')
-	            ->addColumn('senha', 'string')
-	            ->createTable();
-	    }
-	}
+Or create the file manually.
+<? Php
+Use Phinx \ Migration \ AbstractMigration;
+Class FirstMigration extends AbstractMigration
+{
+Public function change ()
+{
+$ Table = $ this-> table ('Users');
+$ Table-> addColumn ('name', 'string')
+-> addColumn ('password', 'string')
+-> createTable ();
+}
+}
 
-$ php vendor/bin/phinx migrate -e development
+$ Php vendor / bin / phinx migrate -e development
 
-#Adionando Faker
+#Adding Faker
 
-$ composer require fzaninotto/faker
+$ Composer require fzaninotto / faker
 
-faça a requisição do seu arquivo
+Please request your file
 
-require_once '/path/to/Faker/src/autoload.php';
+Require_once '/path/to/Faker/src/autoload.php';
 
-faça o caminho de acordo com a pasta pra que foi sua instalação.
+Make the path according to the folder for which was your installation.
 
-para usar basta fazer isto
+To use just do this
 
-$faker = Faker\Factory::create();
+$ Faker = Faker \ Factory :: create ();
 
 // generate data by accessing properties
-echo $faker->name;
+Echo $ faker-> name;
 
 #Install Doctrine
 
-add "webdevbr/doctrine": "1.0.0" in composer.json and run composer install
+Add "webdevbr / doctrine": "1.0.0" in composer.json and run
+
+Composer install

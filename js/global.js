@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$("input[type=text][name=start_date]").mask('99/99/9999');
 	$("input[type=text][name=finish_date]").mask('99/99/9999');
 	$("input[type=text][name=telphone]").mask('99/99/9999');
+	$("input[type=text][name=search-by-cpf]").mask('999.999.999-99');
 	$cont = 0;
 	$verify = 0;
 	$('.employed input').each(function(){
@@ -12,28 +13,24 @@ $(document).ready(function(){
 		}
 	});
 	$("#user input").on("blur", function(){ 
-		if($(this).hasClass('required')){
-			$verify ++;			
-		}
-		if($verify === $cont){
-			$('.locked:after').css("content","\f029");
+		if($(this).val() !== ''){
+			if($(this).hasClass('required')){
+				$verify ++;			
+			}					
+		}	
+		if($verify === $cont){			
 			$('.locked').removeClass('locked');
 		}
 	});
-	$("input[type=button][name=button-del]").click(function(){
-		$id = this.id;
-		$.ajax({
-		   url:   'global.php',
-		   type:  'POST',
-		   data:  $id,
-		   error: function() {
-		         alert('Erro ao tentar ação!');
-		   },
-		   success: function( texto ) { 
-		   		alert('ok');
-		   },
-		   beforeSend: function() {
-		   }
-		});
+	$(".button-edit").click(function(){
+		$input = 'input.edit-' + $(this).attr('value');
+		if($($input).hasClass('hidden') == true){
+			$($input).removeClass('hidden');
+			$("#save-" + $(this).attr('value')).removeClass('hidden');
+		}else{
+			$($input).addClass('hidden');
+			$("#save-" + $(this).attr('value')).addClass('hidden');
+		}
+		
 	});
 });

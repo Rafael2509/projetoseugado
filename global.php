@@ -64,10 +64,13 @@ if ($verify_cpf === NULL && $verify_email === NULL){
 
 			$entityManager->persist($employed);
 			$entityManager->flush();
+		}else{
+			echo $twig->render('message.html', array( 'content' => 'Fill in the data correctly'));
 		}
-
-	}
-	echo $twig->render('message.html', array( 'content' => 'Your record was successfully saved'));
+		echo $twig->render('message.html', array( 'content' => 'Your record was successfully saved'));
+	}else{
+		echo $twig->render('message.html', array( 'content' => 'Fill in the data correctly'));
+	}	
 }else{	
 	echo $twig->render('message.html', array( 'content' => 'E-mail or CPF is already in our database'));
 }

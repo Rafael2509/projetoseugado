@@ -4,6 +4,27 @@
 {% block content %}
     {{ content }}
 <div id="content-employed" class="col-lg-12">
+    <div class="col-lg-12 div-search">
+        <form id="search" action="search.php" method="POST">
+            <div class="col-lg-12">
+                <div class="col-lg-3">
+                    <label class="fullwidth"> Search by Name </label>
+                    <input class="fullwidth" type="text"  name="search-by-name" />
+                </div>
+                <div class="col-lg-3">
+                    <label class="fullwidth"> Search by CPF </label>
+                    <input class="fullwidth" type="text"  name="search-by-cpf" />
+                </div>
+                <div class="col-lg-3">
+                    <label class="fullwidth"> Search by Email </label>
+                    <input class="fullwidth" type="text"  name="search-by-email" />
+                </div>
+                <div class="col-lg-3 button-submit">
+                    <button type="submit"> Search </button>
+                </div>
+            </div>
+        </form>
+    </div>
     <table>
         <thead>
             <tr>
@@ -11,21 +32,33 @@
                 <td>Name</td>
                 <td>Lastname</td>
                 <td>CPF</td>
-                <td>Birthday</td>  
-                <td>You want to delete?              
+                <td>E-mail</td>  
+                <td>What do you need?              
             </tr>
         </thead>
         <tbody>
-            {% for test in employed %}
+        <form method="POST" action="data.php">
+            {% for employee in employed %}
                     <tr>
-                        <td>{{ test.id }}</td>
-                        <td>{{ test.name }}</td>
-                        <td>{{ test.lastname }}</td>
-                        <td>{{ test.cpf }}</td>
-                        <td>{{ test.birthday }}</td>  
-                        <td> <input type="button" name="button-del" id={{test.id}}> TESTE </input> </td>                  
+                        <td>{{ employee.id }}</td>
+                        <td>{{ employee.name }}
+                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-name"/>
+                        </td>
+                        <td>{{ employee.lastname }}
+                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-lastname" />
+                        </td>
+                        <td>{{ employee.cpf }}</td>
+                        <td>{{ employee.email }}
+                            <input class="input-short hidden edit-{{ employee.id }}" type="text" name="new-employee-email" />
+                        </td>  
+                        <td>
+                            <button type="submit" class="button-dell" name="button" value="dell-{{ employee.id }}"></button>
+                            <a class="button-edit" value="{{ employee.id }}"> </a>
+                            <button id="save-{{ employee.id }}" type="submit" class="button-save hidden" name="button" value="edit-{{ employee.id }}"></button>
+                        </td>                  
                     </tr>
-            {% endfor %} 
+            {% endfor %}
+            </form> 
         </tbody>
     </table>
 </div>
